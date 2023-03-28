@@ -4,6 +4,7 @@ Board::Board(int height, int width)
 {
     this->height = height;
     this->width = width;
+    snake = new Snake(15, 15);
 }
 
 void Board::drawBoard()
@@ -12,7 +13,12 @@ void Board::drawBoard()
     {
         for (int j = 0; j < width; j++)
         {
-            if (i == 0 || j == 0 || i == height - 1 || j == width - 1)
+            if (i == snake->getX() && j == snake->getY())
+            {
+                cout << "@";
+            }
+
+            else if (i == 0 || j == 0 || i == height - 1 || j == width - 1)
             {
                 cout << "#";
             }
