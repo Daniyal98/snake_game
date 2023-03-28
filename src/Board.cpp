@@ -16,6 +16,11 @@ void Board::drawBoard()
             {
                 cout << "#";
             }
+
+            else
+            {
+                cout << " ";
+            }
         }
         cout << endl;
     }
