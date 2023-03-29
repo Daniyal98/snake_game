@@ -1,5 +1,6 @@
 #include <iostream>
 #include <stdlib.h>
+#include <unistd.h>
 #include "Board.h"
 using namespace std;
 
@@ -10,5 +11,7 @@ int main()
     {
         system("cls");
         board->drawBoard();
+        board->moveSnake();
+        sleep(1);
     }
 }

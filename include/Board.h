@@ -14,4 +14,5 @@ class Board
     public:
     Board(int height, int width);
     void drawBoard();
+    void moveSnake();
 };

@@ -31,3 +31,8 @@ void Board::drawBoard()
         cout << endl;
     }
 }
+
+void Board::moveSnake()
+{
+    snake->move();
+}
