@@ -41,3 +41,11 @@ void Board::changeSnakeDirection(Direction direction)
 {
     snake->changeDirection(direction);
 }
+
+bool Board::checkForCollision()
+{
+    if (snake->getX() == 0 || snake->getX() == height - 1 || snake->getY() == 0 || snake->getY() == width - 1)
+        return true;
+
+    return false;
+}

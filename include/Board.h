@@ -17,4 +17,5 @@ class Board
     void drawBoard();
     void moveSnake();
     void changeSnakeDirection(Direction direction);
+    bool checkForCollision();
 };

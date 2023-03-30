@@ -38,9 +38,16 @@ int main()
     while (1)
     {
         clear();
+        if (board->checkForCollision())
+        {
+            printw("Game Over!\n");
+            refresh();
+            exit(0);
+        }
+
         board->drawBoard();
         refresh();
         board->moveSnake();
-        sleep(1);
+        usleep(500000);
     }
 }
