@@ -29,3 +29,8 @@ void Snake::move()
     else
         this->x++;
 }
+
+void Snake::changeDirection(Direction direction)
+{
+    this->direction = direction;
+}

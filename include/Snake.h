@@ -24,4 +24,5 @@ class Snake
     int getX() const;
     int getY() const;
     void move();
+    void changeDirection(Direction direction);
 };

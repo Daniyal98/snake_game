@@ -15,24 +15,29 @@ void Board::drawBoard()
         {
             if (i == snake->getX() && j == snake->getY())
             {
-                cout << "@";
+                printw("@");
             }
 
             else if (i == 0 || j == 0 || i == height - 1 || j == width - 1)
             {
-                cout << "#";
+                printw("#");
             }
 
             else
             {
-                cout << " ";
+                printw(" ");
             }
         }
-        cout << endl;
+        printw("\n");
     }
 }
 
 void Board::moveSnake()
 {
     snake->move();
+}
+
+void Board::changeSnakeDirection(Direction direction) 
+{
+    snake->changeDirection(direction);
 }

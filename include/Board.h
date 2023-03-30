@@ -2,6 +2,7 @@
 
 #include <iostream>
 #include "Snake.h"
+#include <curses.h>
 using namespace std;
 
 class Board
@@ -15,4 +16,5 @@ class Board
     Board(int height, int width);
     void drawBoard();
     void moveSnake();
+    void changeSnakeDirection(Direction direction);
 };
