@@ -19,7 +19,7 @@ void Board::drawBoard()
                 printw("@");
             }
 
-            if (i == food->getX() && j == food->getY())
+            else if (i == food->getX() && j == food->getY())
             {
                 printw("*");
             }
@@ -61,7 +61,7 @@ void Board::generateFood()
     srand(time(NULL));
     int x = 0;
     int y = 0;
-    while (x == snake->getX() && y == snake->getY() && food->getX() !=0 && food->getX() != 29 && food->getY() != 0 && food->getY() != 29)
+    while ((x == snake->getX() && y == snake->getY()) || (food->getX() == 0 || food->getX() == 29) || (food->getY() == 0 || food->getY() == 29))
     {
         x = rand() % 30;
         y = rand() % 30;
