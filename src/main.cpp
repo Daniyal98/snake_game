@@ -35,6 +35,7 @@ int main()
     keypad(stdscr, TRUE);       /* enable KEY_UP/KEY_DOWN/KEY_RIGHT/KEY_LEFT */
     Board* board = new Board(30, 30);
     std::thread t(checkForInput, board);
+    board->generateFood();
     while (1)
     {
         clear();

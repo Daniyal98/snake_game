@@ -5,6 +5,7 @@ Board::Board(int height, int width)
     this->height = height;
     this->width = width;
     snake = new Snake(15, 15);
+    food = new Food();
 }
 
 void Board::drawBoard()
@@ -16,6 +17,11 @@ void Board::drawBoard()
             if (i == snake->getX() && j == snake->getY())
             {
                 printw("@");
+            }
+
+            if (i == food->getX() && j == food->getY())
+            {
+                printw("*");
             }
 
             else if (i == 0 || j == 0 || i == height - 1 || j == width - 1)
@@ -48,4 +54,18 @@ bool Board::checkForCollision()
         return true;
 
     return false;
+}
+
+void Board::generateFood()
+{
+    srand(time(NULL));
+    int x = 0;
+    int y = 0;
+    while (x == snake->getX() && y == snake->getY() && food->getX() !=0 && food->getX() != 29 && food->getY() != 0 && food->getY() != 29)
+    {
+        x = rand() % 30;
+        y = rand() % 30;
+        food->setX(x);
+        food->setY(y);
+    }
 }

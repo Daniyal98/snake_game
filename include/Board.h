@@ -2,6 +2,7 @@
 
 #include <iostream>
 #include "Snake.h"
+#include "Food.h"
 #include <curses.h>
 using namespace std;
 
@@ -11,6 +12,7 @@ class Board
     int height;
     int width;
     Snake* snake;
+    Food* food;
 
     public:
     Board(int height, int width);
@@ -18,4 +20,5 @@ class Board
     void moveSnake();
     void changeSnakeDirection(Direction direction);
     bool checkForCollision();
+    void generateFood();
 };
