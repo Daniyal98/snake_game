@@ -23,6 +23,8 @@ class Snake
     Snake(int x, int y);
     int getX() const;
     int getY() const;
+    int getSize() const;
+    void setSize(int size);
     void move();
     void changeDirection(Direction direction);
 };

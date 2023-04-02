@@ -2,6 +2,7 @@
 
 Board::Board(int height, int width)
 {
+    srand(time(NULL));
     this->height = height;
     this->width = width;
     snake = new Snake(15, 15);
@@ -58,14 +59,26 @@ bool Board::checkForCollision()
 
 void Board::generateFood()
 {
-    srand(time(NULL));
     int x = 0;
     int y = 0;
+    x = rand() % 30;
+    y = rand() % 30;
     while ((x == snake->getX() && y == snake->getY()) || (food->getX() == 0 || food->getX() == 29) || (food->getY() == 0 || food->getY() == 29))
     {
         x = rand() % 30;
         y = rand() % 30;
         food->setX(x);
         food->setY(y);
+    }
+    food->setX(x);
+    food->setY(y);
+}
+
+void Board::checkForFoodEaten()
+{
+    if (snake->getX() == food->getX() && snake->getY() == food->getY())
+    {
+        snake->setSize(snake->getSize() + 1);
+        generateFood();
     }
 }

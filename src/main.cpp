@@ -39,6 +39,7 @@ int main()
     while (1)
     {
         clear();
+        board->checkForFoodEaten();
         if (board->checkForCollision())
         {
             printw("Game Over!\n");

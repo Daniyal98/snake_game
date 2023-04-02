@@ -21,4 +21,5 @@ class Board
     void changeSnakeDirection(Direction direction);
     bool checkForCollision();
     void generateFood();
+    void checkForFoodEaten();
 };

@@ -34,3 +34,13 @@ void Snake::changeDirection(Direction direction)
 {
     this->direction = direction;
 }
+
+int Snake::getSize() const
+{
+    return this->size;
+}
+
+void Snake::setSize(int size)
+{
+    this->size = size;
+}
